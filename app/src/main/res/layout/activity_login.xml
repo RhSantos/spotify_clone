@@ -28,6 +28,7 @@
         android:text="Milhares de músicas de Graça no Spotify"/>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/entrar"
         android:layout_width="384dp"
         android:layout_height="54dp"
         android:layout_marginTop="44dp"
@@ -39,13 +40,14 @@
         android:text="Entre de graça"/>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/entrar_celular"
         android:layout_width="384dp"
         android:layout_height="54dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/secondary_button_shape"
         android:drawableLeft="@drawable/phone_icon"
         android:drawablePadding="10dp"
-        android:paddingStart="30dp"
+        android:paddingStart="40dp"
         android:fontFamily="@font/poppins_bold"
         android:textColor="@android:color/white"
         android:textAlignment="textStart"
@@ -54,13 +56,14 @@
         android:text="Continue com Celular"/>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/entrar_google"
         android:layout_width="384dp"
         android:layout_height="54dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/secondary_button_shape"
         android:drawableLeft="@drawable/google_icon"
         android:drawablePadding="10dp"
-        android:paddingStart="25dp"
+        android:paddingStart="35dp"
         android:fontFamily="@font/poppins_bold"
         android:textColor="@android:color/white"
         android:textAlignment="textStart"
@@ -69,13 +72,14 @@
         android:text="Continue com Google"/>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/entrar_facebook"
         android:layout_width="384dp"
         android:layout_height="54dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/secondary_button_shape"
         android:drawableLeft="@drawable/facebook_icon"
         android:drawablePadding="10dp"
-        android:paddingStart="26dp"
+        android:paddingStart="36dp"
         android:fontFamily="@font/poppins_bold"
         android:textColor="@android:color/white"
         android:textAlignment="textStart"
