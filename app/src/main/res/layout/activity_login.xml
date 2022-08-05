@@ -12,35 +12,84 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:src="@drawable/spotify_logo"
         android:rotation="-4"/>
+
+    <TextView
+        android:layout_width="343dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"
+        android:textSize="32sp"
+        android:textAlignment="center"
+        android:text="Milhares de músicas de Graça no Spotify"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="384dp"
         android:layout_height="54dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/primary_button_shape"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"
+        android:textSize="18sp"
         android:text="Entre de graça"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="384dp"
         android:layout_height="54dp"
-        android:background="@drawable/secondary_button_shape"/>
+        android:layout_marginTop="12dp"
+        android:background="@drawable/secondary_button_shape"
+        android:drawableLeft="@drawable/phone_icon"
+        android:drawablePadding="10dp"
+        android:paddingStart="30dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@android:color/white"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:text="Continue com Celular"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="384dp"
         android:layout_height="54dp"
-        android:background="@drawable/secondary_button_shape"/>
+        android:layout_marginTop="12dp"
+        android:background="@drawable/secondary_button_shape"
+        android:drawableLeft="@drawable/google_icon"
+        android:drawablePadding="10dp"
+        android:paddingStart="25dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@android:color/white"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:text="Continue com Google"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="384dp"
         android:layout_height="54dp"
-        android:background="@drawable/secondary_button_shape"/>
+        android:layout_marginTop="12dp"
+        android:background="@drawable/secondary_button_shape"
+        android:drawableLeft="@drawable/facebook_icon"
+        android:drawablePadding="10dp"
+        android:paddingStart="26dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@android:color/white"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:text="Continue com Facebook"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
         android:text="Criar Conta"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/poppins_semibold"
         android:textSize="18sp"/>
 
 
