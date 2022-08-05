@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/rhuan/AndroidStudioProjects/SpotifyClone/app/src/main/res/drawable-xxhdpi/secondary_button_shape.xml" value="0.226" />
+        <entry key="..\:/Users/rhuan/AndroidStudioProjects/SpotifyClone/app/src/main/res/drawable/button_shape.xml" value="0.226" />
+        <entry key="..\:/Users/rhuan/AndroidStudioProjects/SpotifyClone/app/src/main/res/drawable/secondary_button_shape.xml" value="0.226" />
         <entry key="..\:/Users/rhuan/AndroidStudioProjects/SpotifyClone/app/src/main/res/layout/activity_login.xml" value="0.29375" />
         <entry key="..\:/Users/rhuan/AndroidStudioProjects/SpotifyClone/app/src/main/res/layout/activity_main.xml" value="0.3109375" />
       </map>

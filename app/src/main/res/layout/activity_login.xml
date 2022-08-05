@@ -5,6 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bgcolor"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context=".Login">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/spotify_logo"
+        android:rotation="-4"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="384dp"
+        android:layout_height="54dp"
+        android:background="@drawable/primary_button_shape"
+        android:text="Entre de graça"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="384dp"
+        android:layout_height="54dp"
+        android:background="@drawable/secondary_button_shape"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="384dp"
+        android:layout_height="54dp"
+        android:background="@drawable/secondary_button_shape"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="384dp"
+        android:layout_height="54dp"
+        android:background="@drawable/secondary_button_shape"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:text="Criar Conta"
+        android:textSize="18sp"/>
+
 
 </LinearLayout>
