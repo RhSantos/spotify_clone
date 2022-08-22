@@ -9,4 +9,10 @@
         <!-- Customize your theme here. -->
         <item name="android:navigationBarColor">@color/bgcolor</item>
     </style>
+    <style name="DatePickerTheme" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/primary</item>
+        <item name="textColorAlertDialogListItem">@android:color/white</item>
+        <item name="android:background">@color/bgcolor</item>
+        <item name="colorOnPrimary">@color/primary</item>
+    </style>
 </resources>

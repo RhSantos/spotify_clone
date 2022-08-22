@@ -88,13 +88,14 @@
         android:text="Continue com Facebook"/>
 
     <TextView
+        android:id="@+id/criar_conta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:text="Criar Conta"
         android:layout_marginTop="25dp"
         android:fontFamily="@font/poppins_semibold"
-        android:textSize="18sp"/>
+        android:text="Criar Conta"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 
 
 </LinearLayout>

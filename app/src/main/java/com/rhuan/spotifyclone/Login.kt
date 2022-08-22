@@ -17,53 +17,58 @@ class Login : AppCompatActivity() {
         bindView()
         overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
 
-        val btn_entrar = binding.entrar
-        val btn_entrar_celular = binding.entrarCelular
-        val btn_entrar_google = binding.entrarGoogle
-        val btn_entrar_facebook = binding.entrarFacebook
+        val btnEntrar = binding.entrar
+        val btnEntrarCelular = binding.entrarCelular
+        val btnEntrarGoogle = binding.entrarGoogle
+        val btnEntrarFacebook = binding.entrarFacebook
+        val textCriarConta = binding.criarConta
 
-        btn_entrar.setOnClickListener(View.OnClickListener {
-            btn_entrar_celular.setOnClickListener(null)
-            btn_entrar_google.setOnClickListener(null)
-            btn_entrar_facebook.setOnClickListener(null)
+        btnEntrar.setOnClickListener(View.OnClickListener {
+            btnEntrarCelular.setOnClickListener(null)
+            btnEntrarGoogle.setOnClickListener(null)
+            btnEntrarFacebook.setOnClickListener(null)
             Handler(Looper.getMainLooper()).postDelayed(Runnable {
                 startActivity(Intent(this, HomePage().javaClass))
                 finish()
-            }, 3000);
-            btn_entrar.setOnClickListener(null)
+            }, 1000);
+            btnEntrar.setOnClickListener(null)
         })
 
-        btn_entrar_celular.setOnClickListener(View.OnClickListener {
-            btn_entrar.setOnClickListener(null)
-            btn_entrar_google.setOnClickListener(null)
-            btn_entrar_facebook.setOnClickListener(null)
+        btnEntrarCelular.setOnClickListener(View.OnClickListener {
+            btnEntrar.setOnClickListener(null)
+            btnEntrarGoogle.setOnClickListener(null)
+            btnEntrarFacebook.setOnClickListener(null)
             Handler(Looper.getMainLooper()).postDelayed(Runnable {
                 startActivity(Intent(this, HomePage().javaClass))
                 finish()
-            }, 3000);
-            btn_entrar_celular.setOnClickListener(null)
+            }, 1000);
+            btnEntrarCelular.setOnClickListener(null)
         })
 
-        btn_entrar_google.setOnClickListener(View.OnClickListener {
-            btn_entrar.setOnClickListener(null)
-            btn_entrar_celular.setOnClickListener(null)
-            btn_entrar_facebook.setOnClickListener(null)
+        btnEntrarGoogle.setOnClickListener(View.OnClickListener {
+            btnEntrar.setOnClickListener(null)
+            btnEntrarCelular.setOnClickListener(null)
+            btnEntrarFacebook.setOnClickListener(null)
             Handler(Looper.getMainLooper()).postDelayed(Runnable {
                 startActivity(Intent(this, HomePage().javaClass))
                 finish()
-            }, 3000);
-            btn_entrar_google.setOnClickListener(null)
+            }, 1000);
+            btnEntrarGoogle.setOnClickListener(null)
         })
 
-        btn_entrar_facebook.setOnClickListener(View.OnClickListener {
-            btn_entrar.setOnClickListener(null)
-            btn_entrar_google.setOnClickListener(null)
-            btn_entrar_celular.setOnClickListener(null)
+        btnEntrarFacebook.setOnClickListener(View.OnClickListener {
+            btnEntrar.setOnClickListener(null)
+            btnEntrarGoogle.setOnClickListener(null)
+            btnEntrarCelular.setOnClickListener(null)
             Handler(Looper.getMainLooper()).postDelayed(Runnable {
                 startActivity(Intent(this, HomePage().javaClass))
                 finish()
             }, 3000);
-            btn_entrar_facebook.setOnClickListener(null)
+            btnEntrarFacebook.setOnClickListener(null)
+        })
+
+        textCriarConta.setOnClickListener(View.OnClickListener {
+            startActivity(Intent(this,RegisterActivity().javaClass))
         })
 
     }
