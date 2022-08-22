@@ -1,51 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/bg_home_page"
     tools:context=".HomePage">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="70dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_fab"
+        android:foreground="@drawable/ic_add"
+        android:foregroundGravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="40dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:textAlignment="gravity"
-            android:fontFamily="@font/poppins_bold"
-            android:textColor="@android:color/white"
-            android:textAllCaps="false"
-            android:textSize="32sp"
-            android:text="Feito pra você"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:layout_marginStart="18dp"
-            android:src="@drawable/bell"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:src="@drawable/history"/>
+            <LinearLayout
+                android:id="@+id/top_nav_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/settings"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Feito pra você"
+                    android:textAlignment="gravity"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="32sp" />
 
-    </LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/bell" />
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/history" />
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/settings" />
 
-</LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sugestoes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/top_nav_bar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="43dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/mask1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Guns N’ Roses, Bon Jovi, Faith no more e mais!"
+                        android:textColor="#A8A8A8"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/mask2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Veja a última playlist feita para você..."
+                        android:textColor="#A8A8A8"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tendencias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sugestoes"
+                android:layout_alignStart="@id/sugestoes"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Tendências"
+                    android:textAlignment="gravity"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="32sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_tendencias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="226dp"
+                    android:layout_marginTop="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/top_10_artistas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tendencias"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:layout_alignStart="@id/tendencias"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:textAlignment="gravity"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@android:color/white"
+                    android:textAllCaps="false"
+                    android:textSize="32sp"
+                    android:text="Top 10 artistas"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_top_10_artistas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="226dp"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>
