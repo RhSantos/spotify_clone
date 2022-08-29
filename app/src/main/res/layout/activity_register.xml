@@ -29,6 +29,7 @@
         android:text="Registre sua conta"/>
 
     <EditText
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/secondary_button_shape"
@@ -40,9 +41,11 @@
         android:textSize="18sp"
         android:inputType="textPersonName"
         android:textColorHint="@android:color/white"
-        android:paddingTop="3dp"/>
+        android:paddingTop="3dp"
+        android:paddingEnd="45dp"/>
 
     <EditText
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/secondary_button_shape"
@@ -54,9 +57,11 @@
         android:textSize="18sp"
         android:inputType="textPersonName"
         android:textColorHint="@android:color/white"
-        android:paddingTop="3dp"/>
+        android:paddingTop="3dp"
+        android:paddingEnd="45dp"/>
 
     <EditText
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/secondary_button_shape"
@@ -68,9 +73,11 @@
         android:textSize="18sp"
         android:inputType="textEmailAddress"
         android:textColorHint="@android:color/white"
-        android:paddingTop="3dp"/>
+        android:paddingTop="3dp"
+        android:paddingEnd="45dp"/>
 
     <EditText
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/secondary_button_shape"
@@ -82,7 +89,8 @@
         android:textSize="18sp"
         android:inputType="textPassword"
         android:textColorHint="@android:color/white"
-        android:paddingTop="3dp"/>
+        android:paddingTop="3dp"
+        android:paddingEnd="45dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/data_nascimento"
@@ -98,11 +106,12 @@
         android:textSize="18sp"
         android:textAlignment="textStart"
         android:textColorHint="@android:color/white"
-        android:paddingTop="3dp"/>
+        android:paddingTop="3dp"
+        android:paddingEnd="45dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/registrar"
-        android:layout_width="384dp"
+        android:layout_width="match_parent"
         android:layout_height="54dp"
         android:layout_marginTop="44dp"
         android:background="@drawable/primary_button_shape"

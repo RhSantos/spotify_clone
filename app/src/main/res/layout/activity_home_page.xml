@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_home_page"
-    tools:context=".HomePage">
+    tools:context=".HomePageActivity">
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fab"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/shape_fab"
@@ -26,13 +27,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/profile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignEnd="@id/top_nav_bar"
+                android:src="@drawable/ic_profile"/>
+
             <LinearLayout
                 android:id="@+id/top_nav_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
+                android:layout_below="@id/profile"
                 android:orientation="horizontal">
 
                 <TextView

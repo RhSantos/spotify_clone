@@ -5,9 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
-import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Handler(Looper.getMainLooper()).postDelayed(Runnable {
-            startActivity(Intent(this, Login().javaClass))
+            startActivity(Intent(this, LoginOptionsActivity().javaClass))
             finish()
         }, 3000);
     }

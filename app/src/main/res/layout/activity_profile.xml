@@ -26,50 +26,92 @@
         android:textAllCaps="false"
         android:textSize="32sp"
         android:textAlignment="center"
-        android:text="Entre na sua conta"/>
-
+        android:text="Perfil"/>
 
     <EditText
-        android:id="@+id/email_edit_text"
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/secondary_button_shape"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="28dp"
+        android:hint="Nome"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:paddingStart="45dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:inputType="textPersonName"
+        android:textColorHint="@android:color/white"
+        android:paddingTop="3dp"
+        android:paddingEnd="45dp"/>
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/secondary_button_shape"
+        android:layout_marginTop="20dp"
+        android:hint="Nome de Usuário"
+        android:paddingStart="45dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:inputType="textPersonName"
+        android:textColorHint="@android:color/white"
+        android:paddingTop="3dp"
+        android:paddingEnd="45dp"/>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/secondary_button_shape"
+        android:layout_marginTop="20dp"
         android:hint="Email"
         android:paddingStart="45dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:fontFamily="@font/poppins_bold"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:inputType="textEmailAddress"
         android:textColorHint="@android:color/white"
-        android:paddingTop="3dp"/>
+        android:paddingTop="3dp"
+        android:paddingEnd="45dp"/>
 
-    <EditText
-        android:id="@+id/senha_edit_text"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/data_nascimento"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/secondary_button_shape"
         android:layout_marginTop="20dp"
-        android:hint="Senha"
+        android:text="Data de Nascimento"
+        android:textAllCaps="false"
         android:paddingStart="45dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:fontFamily="@font/poppins_bold"
         android:textColor="@android:color/white"
         android:textSize="18sp"
-        android:inputType="textPassword"
+        android:textAlignment="textStart"
         android:textColorHint="@android:color/white"
-        android:paddingTop="3dp"/>
+        android:paddingTop="3dp"
+        android:paddingEnd="45dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/entrar"
+        android:id="@+id/sair"
         android:layout_width="match_parent"
         android:layout_height="54dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="84dp"
         android:background="@drawable/primary_button_shape"
         android:fontFamily="@font/poppins_bold"
         android:textColor="@android:color/white"
         android:textAllCaps="false"
         android:textSize="18sp"
-        android:text="Entrar"/>
+        android:text="Sair"/>
 
     <TextView
         android:id="@+id/voltar"

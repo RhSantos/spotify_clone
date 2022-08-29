@@ -1,19 +1,29 @@
 package com.rhuan.spotifyclone
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import com.rhuan.spotifyclone.databinding.ActivityLoginBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.rhuan.spotifyclone.databinding.ActivityLoginOptionsBinding
 
-class Login : AppCompatActivity() {
 
-    private lateinit var binding:ActivityLoginBinding
+class LoginOptionsActivity : AppCompatActivity() {
+
+    private lateinit var binding:ActivityLoginOptionsBinding
+    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        mAuth = FirebaseAuth.getInstance()
+
+        if(mAuth.currentUser != null){
+            startActivity(Intent(this, HomePageActivity().javaClass))
+            finish()
+        }
+
         bindView()
         overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
 
@@ -24,47 +34,30 @@ class Login : AppCompatActivity() {
         val textCriarConta = binding.criarConta
 
         btnEntrar.setOnClickListener(View.OnClickListener {
-            btnEntrarCelular.setOnClickListener(null)
-            btnEntrarGoogle.setOnClickListener(null)
-            btnEntrarFacebook.setOnClickListener(null)
             Handler(Looper.getMainLooper()).postDelayed(Runnable {
-                startActivity(Intent(this, HomePage().javaClass))
-                finish()
+                startActivity(Intent(this, LoginActivity().javaClass))
             }, 1000);
-            btnEntrar.setOnClickListener(null)
         })
 
         btnEntrarCelular.setOnClickListener(View.OnClickListener {
-            btnEntrar.setOnClickListener(null)
-            btnEntrarGoogle.setOnClickListener(null)
-            btnEntrarFacebook.setOnClickListener(null)
             Handler(Looper.getMainLooper()).postDelayed(Runnable {
-                startActivity(Intent(this, HomePage().javaClass))
+                startActivity(Intent(this, HomePageActivity().javaClass))
                 finish()
             }, 1000);
-            btnEntrarCelular.setOnClickListener(null)
         })
 
         btnEntrarGoogle.setOnClickListener(View.OnClickListener {
-            btnEntrar.setOnClickListener(null)
-            btnEntrarCelular.setOnClickListener(null)
-            btnEntrarFacebook.setOnClickListener(null)
             Handler(Looper.getMainLooper()).postDelayed(Runnable {
-                startActivity(Intent(this, HomePage().javaClass))
+                startActivity(Intent(this, HomePageActivity().javaClass))
                 finish()
             }, 1000);
-            btnEntrarGoogle.setOnClickListener(null)
         })
 
         btnEntrarFacebook.setOnClickListener(View.OnClickListener {
-            btnEntrar.setOnClickListener(null)
-            btnEntrarGoogle.setOnClickListener(null)
-            btnEntrarCelular.setOnClickListener(null)
             Handler(Looper.getMainLooper()).postDelayed(Runnable {
-                startActivity(Intent(this, HomePage().javaClass))
+                startActivity(Intent(this, HomePageActivity().javaClass))
                 finish()
             }, 3000);
-            btnEntrarFacebook.setOnClickListener(null)
         })
 
         textCriarConta.setOnClickListener(View.OnClickListener {
@@ -74,7 +67,7 @@ class Login : AppCompatActivity() {
     }
 
     private fun bindView(){
-        binding = ActivityLoginBinding.inflate(layoutInflater)
+        binding = ActivityLoginOptionsBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
     }
