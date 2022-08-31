@@ -138,7 +138,7 @@ class RegisterActivity : AppCompatActivity() {
             username.toString(),
             email.toString(),
             password.toString(),
-            date.time
+            birthDate.toString()
         )
 
         mAuth.createUserWithEmailAndPassword(user.email,user.password)

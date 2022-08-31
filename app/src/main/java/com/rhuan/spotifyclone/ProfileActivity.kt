@@ -1,6 +1,7 @@
 package com.rhuan.spotifyclone
 
 import android.content.Intent
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -23,7 +24,6 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var username:EditText
     private lateinit var email:EditText
     private lateinit var birthDate:AppCompatButton
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,12 +62,16 @@ class ProfileActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 val userProfile = snapshot.getValue(User::class.java)
-                val sdf = SimpleDateFormat("dd/MM/yyyy")
 
                 name.setText(userProfile!!.name)
                 username.setText(userProfile!!.username)
                 email.setText(userProfile!!.email)
-                birthDate.text = sdf.format(Date(userProfile!!.birthDate))
+                birthDate.text = userProfile!!.birthDate
+
+                name.visibility = View.VISIBLE
+                username.visibility = View.VISIBLE
+                email.visibility = View.VISIBLE
+                birthDate.visibility = View.VISIBLE
             }
             override fun onCancelled(error: DatabaseError) {}
         })

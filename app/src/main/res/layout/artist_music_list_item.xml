@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="14dp">
+
+    <ImageView
+        android:id="@+id/music_image"
+        android:layout_width="170dp"
+        android:layout_height="172dp"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/anitta"/>
+
+    <TextView
+        android:id="@+id/music_artist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Anitta"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="14sp"
+        android:textColor="#A8A8A8"/>
+
+</LinearLayout>

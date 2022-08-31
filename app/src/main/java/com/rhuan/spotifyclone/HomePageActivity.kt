@@ -1,15 +1,24 @@
 package com.rhuan.spotifyclone
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.rhuan.spotifyclone.databinding.ActivityHomePageBinding
+import java.util.*
+import kotlin.collections.HashMap
+
 
 class HomePageActivity : AppCompatActivity() {
 
@@ -17,6 +26,7 @@ class HomePageActivity : AppCompatActivity() {
     lateinit var rvTrends: RecyclerView
     lateinit var rvTop: RecyclerView
     private lateinit var mAuth: FirebaseAuth
+    var musicList:MutableList<Music> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,12 +41,15 @@ class HomePageActivity : AppCompatActivity() {
         rvTrends = binding.rvTendencias
 
         rvTrends.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        rvTrends.adapter = MusicAdapter(fakeMusics(this))
+
+        musicList.addAll(fakeMusics(this))
+
+        rvTrends.adapter = MusicAdapter(musicList,1)
 
         rvTop = binding.rvTop10Artistas
 
         rvTop.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        rvTop.adapter = MusicAdapter(fakeMusics(this))
+        rvTop.adapter = MusicAdapter(musicList,2)
 
         profile.setOnClickListener(View.OnClickListener {
             Handler(Looper.getMainLooper()).postDelayed(Runnable {
@@ -56,6 +69,21 @@ class HomePageActivity : AppCompatActivity() {
         if(mAuth.currentUser == null){
             finish()
         }
+
+        var musicList:MutableList<Music> = mutableListOf()
+
+        FirebaseDatabase
+            .getInstance()
+            .getReference("Musics")
+            .get()
+            .addOnCompleteListener{
+                val map = it.result.value as HashMap<String,Object>
+                val list = mutableListOf<String>()
+                map.forEach { list.add(Gson().toJson(it.value)) }
+                list.forEach { musicList.add(Gson().fromJson(it,Music::class.java)) }
+                rvTrends.adapter = MusicAdapter(musicList,1)
+                rvTop.adapter = MusicAdapter(musicList,2)
+            }
     }
 
     private fun bindView(){

@@ -30,6 +30,7 @@
 
     <EditText
         android:id="@+id/name"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/secondary_button_shape"
@@ -48,6 +49,7 @@
 
     <EditText
         android:id="@+id/username"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/secondary_button_shape"
@@ -66,6 +68,7 @@
 
     <EditText
         android:id="@+id/email"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/secondary_button_shape"
@@ -84,6 +87,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/data_nascimento"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/secondary_button_shape"

@@ -7,7 +7,7 @@ data class User(
     val username:String,
     val email:String,
     val password:String,
-    val birthDate:Long
+    val birthDate:String
 ) {
-    constructor():this("","","","",0L)
+    constructor():this("","","","","")
 }
