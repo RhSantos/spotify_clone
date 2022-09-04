@@ -28,8 +28,3 @@ class MusicBuilder:Serializable {
 }
 
 fun music(block: MusicBuilder.() -> Unit):Music = MusicBuilder().apply(block).build()
-
-fun fakeMusics(context: Context) = mutableListOf<Music>(
-    Music("gs://spotify-clone-c1726.appspot.com/images/12312-41324321","Girl from Rio","Anitta",""),
-    Music("https://m.media-amazon.com/images/I/71AyfVKzxLL._AC_SL1427_.jpg","Levitating","Dua Lipa","")
-)

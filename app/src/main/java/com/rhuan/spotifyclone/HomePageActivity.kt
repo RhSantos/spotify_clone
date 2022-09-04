@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,7 +27,7 @@ class HomePageActivity : AppCompatActivity() {
     lateinit var rvTrends: RecyclerView
     lateinit var rvTop: RecyclerView
     private lateinit var mAuth: FirebaseAuth
-    var musicList:MutableList<Music> = mutableListOf()
+    var musicList:List<Music> = listOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,8 +42,6 @@ class HomePageActivity : AppCompatActivity() {
         rvTrends = binding.rvTendencias
 
         rvTrends.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-
-        musicList.addAll(fakeMusics(this))
 
         rvTrends.adapter = MusicAdapter(musicList,1)
 
@@ -77,12 +76,14 @@ class HomePageActivity : AppCompatActivity() {
             .getReference("Musics")
             .get()
             .addOnCompleteListener{
-                val map = it.result.value as HashMap<String,Object>
-                val list = mutableListOf<String>()
-                map.forEach { list.add(Gson().toJson(it.value)) }
-                list.forEach { musicList.add(Gson().fromJson(it,Music::class.java)) }
-                rvTrends.adapter = MusicAdapter(musicList,1)
-                rvTop.adapter = MusicAdapter(musicList,2)
+                if(it.result.value != null){
+                    val map = it.result.value as HashMap<String,Object>
+                    val list = mutableListOf<String>()
+                    map.forEach { list.add(Gson().toJson(it.value)) }
+                    list.forEach { musicList.add(Gson().fromJson(it,Music::class.java)) }
+                    rvTrends.adapter = MusicAdapter(musicList,1)
+                    rvTop.adapter = MusicAdapter(musicList,2)
+                }
             }
     }
 
@@ -92,3 +93,4 @@ class HomePageActivity : AppCompatActivity() {
         setContentView(view)
     }
 }
+
